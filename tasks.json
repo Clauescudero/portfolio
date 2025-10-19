@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Hacer la compra",
+    "description": "ir al super a comprar",
+    "done": false,
+    "created_at": "2025-10-19T16:37:50.030098"
+  },
+  {
+    "id": 2,
+    "title": "Estudiar",
+    "description": "Repasar examen de Sistemas",
+    "done": true,
+    "created_at": "2025-10-19T16:38:36.383127"
+  }
+]
