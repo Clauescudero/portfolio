@@ -1,3 +1,4 @@
+PORTFOLIO DE CLAUDIA ESCUDERO
 portfolio/
 │
 ├── 📂 python_task_manager/
@@ -23,8 +24,8 @@ portfolio/
         │
         └── 📂 services/
             └── auth_service.dart
-🚀 Proyectos
-1. Python Task Manager 🐍
+Proyectos
+1. Python Task Manager 
 Un gestor de tareas completo desarrollado en Python que permite:
 
 ✅ Añadir nuevas tareas
@@ -53,36 +54,25 @@ Tecnologías: HTML5, CSS3
 3. Flutter FlipFlow App 📱
 Una aplicación móvil en desarrollo para gestión de reservas en un gimnasio, desarrollada con Flutter y Firebase:
 
-🏗️ Características Implementadas:
+Características Implementadas:
 🔐 Sistema de autenticación (login/registro)
 
 📅 Gestión de reservas de clases
 
 👤 Perfiles de usuario personalizados
 
-🏋️ Seguimiento de entrenamientos y PRs
-
-👑 Panel de administrador para gestión
-
 ☁️ Base de datos en tiempo real con Firebase
 
 📊 Estructura de la App:
+
 Pantallas Principales:
-
 login_screen.dart - Inicio de sesión
-
 register_screen.dart - Registro de usuarios
-
 home_screen.dart - Pantalla principal
-
 users_home_screen.dart - Dashboard de usuario
-
 booking_screen.dart - Reservas de clases
-
 profile_screen.dart - Perfil y configuración
 
-Servicios:
-
-auth_service.dart - Gestión de autenticación y usuarios
+Servicios: auth_service.dart - Gestión de autenticación y usuarios
 
 Tecnologías: Flutter, Dart, Firebase, Cloud Firestore
