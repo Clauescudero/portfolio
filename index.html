@@ -283,65 +283,65 @@
             scroll-behavior: smooth;
         }
         <style>
-/* ICONO / SVG en .about-image */
-.about-image {
-    background: #fff0;
-    height: 300px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Pulsing + floating animation */
-.icon-wrapper {
-    width: 220px;
-    height: 220px;
-    display: grid;
-    place-items: center;
-    transform-origin: center;
-    animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-/* pulso (escala y opacidad en círculo de fondo) */
-.icon-bg {
-    position: absolute;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    filter: blur(18px);
-    opacity: 0.12;
-    z-index: 0;
-    animation: pulse 2.8s infinite;
-}
-
-@keyframes pulse {
-    0%   { transform: scale(0.95); opacity: 0.12; }
-    50%  { transform: scale(1.05); opacity: 0.18; }
-    100% { transform: scale(0.95); opacity: 0.12; }
-}
-
-/* El SVG encima del fondo */
-.icon-svg {
-    position: relative;
-    z-index: 1;
-    width: 160px;
-    height: 160px;
-}
-
-/* adapta en móvil */
-@media (max-width:768px) {
-  .icon-wrapper { width: 160px; height: 160px; }
-  .icon-bg { width: 200px; height: 200px; }
-  .icon-svg { width: 120px; height: 120px; }
-}
-</style>
+            /* ICONO / SVG en .about-image */
+            .about-image {
+                background: #fff0;
+                height: 300px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Pulsing + floating animation */
+            .icon-wrapper {
+                width: 220px;
+                height: 220px;
+                display: grid;
+                place-items: center;
+                transform-origin: center;
+                animation: float 4s ease-in-out infinite;
+            }
+            
+            @keyframes float {
+                0%   { transform: translateY(0); }
+                50%  { transform: translateY(-10px); }
+                100% { transform: translateY(0); }
+            }
+            
+            /* pulso (escala y opacidad en círculo de fondo) */
+            .icon-bg {
+                position: absolute;
+                width: 260px;
+                height: 260px;
+                border-radius: 50%;
+                filter: blur(18px);
+                opacity: 0.12;
+                z-index: 0;
+                animation: pulse 2.8s infinite;
+            }
+            
+            @keyframes pulse {
+                0%   { transform: scale(0.95); opacity: 0.12; }
+                50%  { transform: scale(1.05); opacity: 0.18; }
+                100% { transform: scale(0.95); opacity: 0.12; }
+            }
+            
+            /* El SVG encima del fondo */
+            .icon-svg {
+                position: relative;
+                z-index: 1;
+                width: 160px;
+                height: 160px;
+            }
+            
+            /* adapta en móvil */
+            @media (max-width:768px) {
+              .icon-wrapper { width: 160px; height: 160px; }
+              .icon-bg { width: 200px; height: 200px; }
+              .icon-svg { width: 120px; height: 120px; }
+            }
+        </style>
 
 </head>
 <body>
@@ -396,7 +396,6 @@
                                 </div>
                               </div>
                             </div>
-                         
                     </div>
                 </div>
             </div>
@@ -430,7 +429,6 @@
                 </div>
             </div>
         </section>
-
         <section id="habilidades">
             <div class="container">
                 <h2>Habilidades Técnicas</h2>
