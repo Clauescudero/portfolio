@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claudia Escudero- Portfolio</title>
+    <title>Claudia Escudero | Desarrolladora de Software</title>
     <style>
         /* VARIABLES CSS - Para mantener consistencia en colores y valores */
         :root {
@@ -152,14 +152,54 @@
         }
 
         .about-image {
-            background: #ddd; /* Placeholder para tu foto */
+            background: #fff0;
             height: 300px;
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-style: italic;
-            color: #666;
+        }
+        
+        /* Pulsing + floating animation */
+        .icon-wrapper {
+            width: 220px;
+            height: 220px;
+            display: grid;
+            place-items: center;
+            transform-origin: center;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%   { transform: translateY(0); }
+            50%  { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* pulso (escala y opacidad en círculo de fondo) */
+        .icon-bg {
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            filter: blur(18px);
+            opacity: 0.12;
+            z-index: 0;
+            animation: pulse 2.8s infinite;
+        }
+        
+        @keyframes pulse {
+            0%   { transform: scale(0.95); opacity: 0.12; }
+            50%  { transform: scale(1.05); opacity: 0.18; }
+            100% { transform: scale(0.95); opacity: 0.12; }
+        }
+        
+        /* El SVG encima del fondo */
+        .icon-svg {
+            position: relative;
+            z-index: 1;
+            width: 160px;
+            height: 160px;
         }
 
         /* PROYECTOS */
@@ -203,6 +243,40 @@
         .project-links a:hover {
             background: var(--secondary-color);
             color: white;
+        }
+
+        /* HABILIDADES */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light-color);
+        }
+
+        .skill-category li:last-child {
+            border-bottom: none;
         }
 
         /* CONTACTO */
@@ -267,6 +341,11 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Habilidades en una columna */
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
             /* Contacto en columna */
             .contact-links {
                 flex-direction: column;
@@ -276,76 +355,21 @@
             .contact-links a {
                 width: 200px;
                 text-align: center;
+            }
+            
+            /* adapta en móvil */
+            .icon-wrapper { width: 160px; height: 160px; }
+            .icon-bg { width: 200px; height: 200px; }
+            .icon-svg { width: 120px; height: 120px; }
         }
 
         /* Animaciones suaves al hacer scroll */
         html {
             scroll-behavior: smooth;
         }
-        <style>
-            /* ICONO / SVG en .about-image */
-            .about-image {
-                background: #fff0;
-                height: 300px;
-                border-radius: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            /* Pulsing + floating animation */
-            .icon-wrapper {
-                width: 220px;
-                height: 220px;
-                display: grid;
-                place-items: center;
-                transform-origin: center;
-                animation: float 4s ease-in-out infinite;
-            }
-            
-            @keyframes float {
-                0%   { transform: translateY(0); }
-                50%  { transform: translateY(-10px); }
-                100% { transform: translateY(0); }
-            }
-            
-            /* pulso (escala y opacidad en círculo de fondo) */
-            .icon-bg {
-                position: absolute;
-                width: 260px;
-                height: 260px;
-                border-radius: 50%;
-                filter: blur(18px);
-                opacity: 0.12;
-                z-index: 0;
-                animation: pulse 2.8s infinite;
-            }
-            
-            @keyframes pulse {
-                0%   { transform: scale(0.95); opacity: 0.12; }
-                50%  { transform: scale(1.05); opacity: 0.18; }
-                100% { transform: scale(0.95); opacity: 0.12; }
-            }
-            
-            /* El SVG encima del fondo */
-            .icon-svg {
-                position: relative;
-                z-index: 1;
-                width: 160px;
-                height: 160px;
-            }
-            
-            /* adapta en móvil */
-            @media (max-width:768px) {
-              .icon-wrapper { width: 160px; height: 160px; }
-              .icon-bg { width: 200px; height: 200px; }
-              .icon-svg { width: 120px; height: 120px; }
-            }
-        </style>
-
+    </style>
 </head>
 <body>
-    <!-- HTML aquí -->
     <header>
         <nav>
             <div class="container">
@@ -364,8 +388,8 @@
     <main>
         <section id="inicio" class="hero">
             <div class="container">
-                <h2>Desarrollador Software</h2>
-                <p>Bienvenido a mi portfolio profesional</p>
+                <h2>Desarrolladora de Software</h2>
+                <p>Transformando ideas en soluciones digitales innovadoras</p>
                 <a href="#proyectos" class="btn">Ver Proyectos</a>
             </div>
         </section>
@@ -375,27 +399,24 @@
                 <h2>Sobre Mí</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>¡Hola! Soy una estudiante de Desarrollo de aplicaciones multiplataforma con experiencia en la programación y entusiasta de seguir formándome y aprendiendo. </p> 
+                        <p>¡Hola! Soy una estudiante de Desarrollo de aplicaciones multiplataforma con experiencia en la programación y entusiasta de seguir formándome y aprendiendo.</p> 
                         <p>En mi tiempo libre, me gusta aprender nuevas tecnologías y desarrollar proyectos creativos.</p>
+                        <p>Mi objetivo es crear aplicaciones que no solo funcionen bien, sino que también ofrezcan una experiencia de usuario excepcional.</p>
                     </div>
                     <div class="about-image">
-                         <div class="about-image">
-                              <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-                                <div class="icon-bg" style="background: radial-gradient(circle at 30% 30%, #3cc2e7, transparent 40%), radial-gradient(circle at 70% 70%, #3498db, transparent 40%);"></div>
+                        <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+                            <div class="icon-bg" style="background: radial-gradient(circle at 30% 30%, #3cc2e7, transparent 40%), radial-gradient(circle at 70% 70%, #3498db, transparent 40%);"></div>
                             
-                                <div class="icon-wrapper" aria-hidden="true">
-                                  <!-- SVG inline: ícono "persona / avatar" estilizado -->
-                                  <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Icono sobre mí">
-                                    
-                                    <circle cx="32" cy="20" r="12" fill="#0d3a48" />
-                                   
-                                    <path d="M10 54c0-10 9-18 22-18s22 8 22 18" fill="#2c3e50"/>
-                                    
-                                    <path d="M16 44c4-4 12-6 16-6s12 2 16 6" fill="#3498db" opacity="0.95"/>
-                                  </svg>
-                                </div>
-                              </div>
+                            <div class="icon-wrapper" aria-hidden="true">
+                                <!-- SVG inline: ícono de ordenador estilizado -->
+                                <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Icono de ordenador">
+                                    <rect x="8" y="12" width="48" height="32" rx="4" fill="#0d3a48"/>
+                                    <rect x="12" y="16" width="40" height="24" rx="2" fill="#3498db"/>
+                                    <rect x="22" y="44" width="20" height="4" rx="2" fill="#2c3e50"/>
+                                    <rect x="18" y="48" width="28" height="2" rx="1" fill="#2c3e50"/>
+                                </svg>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -414,14 +435,14 @@
                     </div>
                     <div class="project-card">
                         <h3>Task-Manager</h3>
-                        <p>Mini Proyecto Python</p>
+                        <p>Mini Proyecto Python para gestión de tareas con interfaz de línea de comandos.</p>
                         <div class="project-links">
                             <a href="https://github.com/Clauescudero/portfolio/tree/main/python" target="_blank">📁 Código</a>
                         </div>
                     </div>
                     <div class="project-card">
                         <h3>Gestor de reservas</h3>
-                        <p>Fragmento de una aplicacion con Flutter y Firebase</p>
+                        <p>Fragmento de una aplicación con Flutter y Firebase para gestión de reservas.</p>
                         <div class="project-links">
                             <a href="https://github.com/Clauescudero/portfolio/tree/main/flutter_flipflow/lib" target="_blank">📁 Código</a>
                         </div>
@@ -429,6 +450,7 @@
                 </div>
             </div>
         </section>
+        
         <section id="habilidades">
             <div class="container">
                 <h2>Habilidades Técnicas</h2>
@@ -446,7 +468,7 @@
                         <ul>
                             <li>Python Scripting</li>
                             <li>Manejo de archivos JSON</li>
-                            <li>Programación con FLutter</li>
+                            <li>Programación con Flutter</li>
                             <li>Lógica de programación estructurada</li>
                         </ul>
                     </div>
@@ -469,7 +491,6 @@
                 <div class="contact-links">
                     <a href="https://github.com/Clauescudero" target="_blank">GitHub</a>
                     <a href="mailto:cescuderomontoro@gmail.com">Email</a>
-                    
                 </div>
             </div>
         </section>
