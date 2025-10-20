@@ -3,452 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claudia Escudero - Portfolio</title>
-    <style>
-        /* VARIABLES CSS */
-        :root {
-            --primary-color: #0d3a48;
-            --secondary-color: #3498db;
-            --accent-color: #3cc2e7;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
+    <title>Portfolio - CLaudia Escudero</title>
 
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+:root {
+  --main-bg: #0d1b2a;
+  --accent: #3cc2e7;
+  --text: #f1f1f1;
+  --card-bg: #142d4c;
+  --light: #e0e0e0;
+}
 
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: #fff;
-        }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+body {
+  background-color: var(--main-bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: var(--transition);
-        }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  position: relative;
+}
 
-        a:hover {
-            color: var(--accent-color);
-        }
+header h1 {
+  font-size: 2.6rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--secondary-color);
-            color: white;
-            border-radius: 5px;
-            transition: var(--transition);
-            font-weight: bold;
-        }
+header h2 {
+  font-size: 1.4rem;
+  color: var(--light);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px rgba(60, 194, 231, 0.6),
+    0 0 20px rgba(60, 194, 231, 0.4),
+    0 0 40px rgba(60, 194, 231, 0.2);
+  animation: glow 3s ease-in-out infinite alternate;
+}
 
-        .btn:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
+/* efecto foco luz */
+@keyframes glow {
+  from { text-shadow: 0 0 5px rgba(60, 194, 231, 0.6), 0 0 10px rgba(60, 194, 231, 0.3); }
+  to { text-shadow: 0 0 20px rgba(60, 194, 231, 0.9), 0 0 40px rgba(60, 194, 231, 0.6); }
+}
 
-        header {
-            background: var(--primary-color);
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
+/* ABOUT */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 40px;
+}
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 20px;
-        }
+.about-text {
+  max-width: 500px;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: var(--light);
+}
 
-        nav h1 {
-            font-size: 1.5rem;
-        }
+/* SVG ICON (Opción A) */
+.about-image {
+  background: transparent;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+.icon-wrapper {
+  width: 220px;
+  height: 220px;
+  display: grid;
+  place-items: center;
+  transform-origin: center;
+  animation: float 4s ease-in-out infinite;
+  position: relative;
+}
 
-        nav a {
-            color: white;
-            font-weight: 500;
-        }
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 
-        nav a:hover {
-            color: var(--secondary-color);
-        }
+.icon-bg {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  filter: blur(18px);
+  opacity: 0.12;
+  z-index: 0;
+  animation: pulse 2.8s infinite;
+  background: radial-gradient(circle at 30% 30%, #3cc2e7, transparent 40%), 
+              radial-gradient(circle at 70% 70%, #3498db, transparent 40%);
+}
 
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-            margin-top: 60px;
-            position: relative;
-            overflow: hidden;
-        }
+@keyframes pulse {
+  0%   { transform: scale(0.95); opacity: 0.12; }
+  50%  { transform: scale(1.05); opacity: 0.18; }
+  100% { transform: scale(0.95); opacity: 0.12; }
+}
 
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 
-                0 0 5px rgba(255,255,255,0.3),
-                0 0 15px var(--accent-color),
-                0 0 25px var(--accent-color);
-            animation: glow 3s ease-in-out infinite alternate;
-        }
+.icon-svg {
+  position: relative;
+  z-index: 1;
+  width: 160px;
+  height: 160px;
+}
 
-        @keyframes glow {
-            from {
-                text-shadow:
-                    0 0 5px rgba(255,255,255,0.2),
-                    0 0 10px var(--accent-color),
-                    0 0 20px var(--secondary-color);
-            }
-            to {
-                text-shadow:
-                    0 0 10px rgba(255,255,255,0.5),
-                    0 0 25px var(--accent-color),
-                    0 0 45px var(--secondary-color);
-            }
-        }
+/* SKILLS */
+.skills {
+  background-color: #10243d;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
+.skills h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 30px;
+}
 
-        section {
-            padding: 80px 0;
-        }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-        section:nth-child(even) {
-            background: var(--light-color);
-        }
+.skill-card {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(60, 194, 231, 0.2);
+}
 
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-        }
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(60, 194, 231, 0.3);
+}
 
-        /* SOBRE MÍ */
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
+.skill-card h3 {
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
 
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-image {
-            background: transparent;
-            height: 300px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /*  SVG ICONO */
-        .icon-wrapper {
-            width: 220px;
-            height: 220px;
-            display: grid;
-            place-items: center;
-            transform-origin: center;
-            animation: float 4s ease-in-out infinite;
-            position: relative;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        .icon-bg {
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            filter: blur(18px);
-            opacity: 0.12;
-            z-index: 0;
-            background: radial-gradient(circle at 30% 30%, #3cc2e7, transparent 40%),
-                        radial-gradient(circle at 70% 70%, #3498db, transparent 40%);
-            animation: pulse 2.8s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.12; }
-            50% { transform: scale(1.05); opacity: 0.18; }
-            100% { transform: scale(0.95); opacity: 0.12; }
-        }
-
-        .icon-svg {
-            position: relative;
-            z-index: 1;
-            width: 160px;
-            height: 160px;
-        }
-
-        /* PROYECTOS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .project-links {
-            margin-top: 1.5rem;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-links a {
-            padding: 8px 16px;
-            background: var(--light-color);
-            border-radius: 5px;
-            font-size: 0.9rem;
-        }
-
-        .project-links a:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-
-        /* CONTACTO */
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            padding: 15px 30px;
-            background: var(--secondary-color);
-            color: white;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: var(--transition);
-        }
-
-        .contact-links a:hover {
-            background: var(--accent-color);
-            transform: scale(1.05);
-        }
-
-        footer {
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-image {
-                height: 220px;
-            }
-
-            .icon-wrapper { width: 160px; height: 160px; }
-            .icon-bg { width: 200px; height: 200px; }
-            .icon-svg { width: 120px; height: 120px; }
-        }
-    </style>
+/* RESPONSIVE */
+@media (max-width:768px) {
+  header h1 { font-size: 2rem; }
+  .about { flex-direction: column; }
+  .icon-wrapper { width: 160px; height: 160px; }
+  .icon-bg { width: 200px; height: 200px; }
+  .icon-svg { width: 120px; height: 120px; }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1>Claudia Escudero Montoro</h1>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre Mí</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section id="inicio" class="hero">
-            <div class="container">
-                <h2>Desarrollador Software 💻</h2>
-                <p>Bienvenido a mi portfolio profesional</p>
-                <a href="#proyectos" class="btn">Ver Proyectos</a>
-            </div>
-        </section>
+<header>
+  <h1>Cescu</h1>
+  <h2>Desarrollador web</h2>
+</header>
 
-        <section id="sobre-mi">
-            <div class="container">
-                <h2>Sobre Mí</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>¡Hola! Soy una estudiante de Desarrollo de aplicaciones multiplataforma con experiencia en programación y un entusiasmo enorme por seguir aprendiendo.</p> 
-                        <p>En mi tiempo libre, me gusta aprender nuevas tecnologías y desarrollar proyectos creativos.</p>
-                    </div>
+<section class="about">
+  <div class="about-text">
+    <p>¡Hola! Soy Claudia Escudero, estudiante de desarrollo multiplataforma apasionado por crear experiencias digitales atractivas, rápidas y funcionales. 
+    Me gusta combinar diseño moderno con código limpio y eficiente, y aprender cada día nuevas tecnologías.</p>
+  </div>
 
-                    <!-- Icono SVG animado -->
-                    <div class="about-image">
-                        <div class="icon-wrapper">
-                            <div class="icon-bg"></div>
-                            <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="32" cy="20" r="12" fill="#0d3a48"/>
-                                <path d="M10 54c0-10 9-18 22-18s22 8 22 18" fill="#2c3e50"/>
-                                <path d="M16 44c4-4 12-6 16-6s12 2 16 6" fill="#3498db" opacity="0.95"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <div class="about-image">
+    <div class="icon-wrapper">
+      <div class="icon-bg"></div>
+      <svg class="icon-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Icono sobre mí">
+        <circle cx="32" cy="20" r="12" fill="#0d3a48" />
+        <path d="M10 54c0-10 9-18 22-18s22 8 22 18" fill="#2c3e50"/>
+        <path d="M16 44c4-4 12-6 16-6s12 2 16 6" fill="#3498db" opacity="0.95"/>
+      </svg>
+    </div>
+  </div>
+</section>
 
-        <section id="proyectos">
-            <div class="container">
-                <h2>Mis Proyectos</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Portfolio Personal</h3>
-                        <p>Un portfolio responsive creado con HTML y CSS puro, demostrando buenas prácticas de desarrollo web.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Clauescudero/portfolio/tree/main/html" target="_blank">📁 Código</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Task-Manager</h3>
-                        <p>Mini Proyecto Python</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Clauescudero/portfolio/tree/main/python" target="_blank">📁 Código</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Gestor de reservas</h3>
-                        <p>Fragmento de una aplicación con Flutter y Firebase</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Clauescudero/portfolio/tree/main/flutter_flipflow/lib" target="_blank">📁 Código</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="skills">
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Backend</h3>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Estructuración de contenido web</li>
+        </ul>
+    </div>
+    <div class="skill-card">
+      <h3>Backend</h3>
+        <ul>
+            <li>Python Scripting</li>
+            <li>Manejo de archivos JSON</li>
+            <li>Programación con Flutter</li>
+            <li>Lógica de programación estructurada</li>
+        </ul>
+    </div>
+    <div class="skill-card">
+      <h3>Herramientas y Base de datos</h3>
+        <ul>
+            <li>Git & GitHub</li>
+            <li>VS Code</li>
+            <li>Firebase (Cloud y Authentication)</li>
+            <li>MySQL y Workbench</li>
+        </ul>
+</section>
 
-        <section id="habilidades">
-            <div class="container">
-                <h2>Habilidades Técnicas</h2>
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <ul>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>Estructuración de contenido web</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <ul>
-                            <li>Python Scripting</li>
-                            <li>Manejo de archivos JSON</li>
-                            <li>Programación con Flutter</li>
-                            <li>Lógica de programación estructurada</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Herramientas y Base de datos</h3>
-                        <ul>
-                            <li>Git & GitHub</li>
-                            <li>VS Code</li>
-                            <li>Firebase (Cloud y Authentication)</li>
-                            <li>MySQL y Workbench</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto">
-            <div class="container">
-                <h2>Contacto</h2>
-                <div class="contact-links">
-                    <a href="https://github.com/Clauescudero" target="_blank">GitHub</a>
-                    <a href="mailto:cescuderomontoro@gmail.com">Email</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Claudia Escudero. Todos los derechos reservados.</p>
-        </div>
-    </footer>
 </body>
 </html>
